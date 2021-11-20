@@ -1,0 +1,38 @@
+@media(max-width: 800px) {
+    .header {
+        &__plase {
+            display: none !important
+        }
+    }
+    .cart-item{
+        &__img {
+            margin-left: 0;
+        }
+        &__name{
+            font-size: 20px !important;
+        }
+    }
+}
+@media(max-width: 660px) {
+    .header {
+        &__number {
+            display: none 
+        }
+    }
+}
+@media(max-width: 470px) {
+    .header {
+        &__logo-img {
+            width: 75px !important
+        }
+        &__logo-title {
+            font-size: 24px !important
+        }
+    }
+}
+
+
+@media(max-width: 430px) {
+    
+}
+
