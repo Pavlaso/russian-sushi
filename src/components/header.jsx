@@ -1,10 +1,11 @@
+import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import arrow from '../images/arrow.png'
 import cart from '../images/cart.png'
 import '../pages/home.scss'
 
-export const Header = () => {
+const Header = React.memo(() => {
     const {totalPrice} = useSelector(({cart}) => cart)
     return  <div className="header">
     <div className="header__container">
@@ -43,4 +44,5 @@ export const Header = () => {
 
     </div>
 </div>
-}
+})
+export default Header

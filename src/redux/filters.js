@@ -16,5 +16,6 @@ export const filter = createSlice({
     }
 }) 
 
+
 export const {setCategories, setFilters} = filter.actions
 export default filter.reducer

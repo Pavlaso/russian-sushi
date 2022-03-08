@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit'
 import sushi from "./redux/sushi";
-import filter from "./redux/filters";
+import filter  from "./redux/filters";
 import cart from "./redux/cart";
 import {BrowserRouter} from 'react-router-dom'
 
