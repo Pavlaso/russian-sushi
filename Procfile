@@ -1,1 +1,1 @@
-web: yarn proStart
+web: node server.js
