@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import arrow from '../images/arrow.png'
 import cart from '../images/cart.png'
-import '../pages/home.scss'
 
 const Header = React.memo(() => {
     

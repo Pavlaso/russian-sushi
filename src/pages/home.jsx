@@ -1,4 +1,3 @@
-import './home.scss'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getSushi } from '../redux/sushi'

@@ -1,4 +1,3 @@
-import './sushi.scss'
 
 export const Sushi = ({url, name, price, text, addFunc, OBJ, addCount}) => {
     return <div className="sushi"> 
