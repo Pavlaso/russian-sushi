@@ -1,10 +1,11 @@
-import React, { FC } from "react"
+import React from "react"
 import { useDispatch } from "react-redux"
 import { minusItem, plusItem, removeCartItem } from "../redux/cart"
 
 const CartItem = React.memo( ({url, name, weight, num, totalCount, itemPrice, id}) => {
     
         const dispath = useDispatch()
+
         const plusItemFunc = (id) => dispath(plusItem(id))
         const minusItemFunc = (id) => dispath(minusItem(id))
         const removeCartItemFunc = (id) => dispath(removeCartItem(id))

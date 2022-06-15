@@ -6,7 +6,9 @@ import cart from '../images/cart.png'
 import '../pages/home.scss'
 
 const Header = React.memo(() => {
+    
     const {totalPrice} = useSelector(({cart}) => cart)
+
     return  <div className="header">
     <div className="header__container">
         <div className="header__logo">

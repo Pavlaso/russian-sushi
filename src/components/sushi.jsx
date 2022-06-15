@@ -1,4 +1,5 @@
 import './sushi.scss'
+
 export const Sushi = ({url, name, price, text, addFunc, OBJ, addCount}) => {
     return <div className="sushi"> 
         <img src={url} alt='sushi' className="sushi__image" />
