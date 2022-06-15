@@ -165,12 +165,14 @@
     &__description-text {
         width: 250px;
         font-size: 14px;
+
     }
     &__description {
         display: flex;
         justify-content: space-between;
         margin: 0 0 30px 0;
         color: #858585;
+        min-height: 54px;
 
     }
     &__bottom {

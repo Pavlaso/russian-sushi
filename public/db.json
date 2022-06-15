@@ -477,34 +477,34 @@
       {
         "id": 44,
         "url": "./img/beverages/1.jpeg",
-        "name": "Кока-кола",
+        "name": "Кока-кола 0.5 л",
         "category": "Напитки",
         "popular": 7,
         "num": 1,
-        "price": 55,
-        "text": "",
+        "price": 100,
+        "text": "Вода, лимонной кислота, сахар и немного любви ❤️️",
         "weight": 0.33
       },
       {
         "id": 45,
         "url": "./img/beverages/1.jpeg",
-        "name": "Кока-кола",
+        "name": "Кока-кола 1л",
         "category": "Напитки",
         "popular": 7,
         "num": 1,
-        "price": 100,
-        "text": "",
+        "price": 150,
+        "text": "Вода, лимонной кислота, сахар и немного любви ❤️️",
         "weight": 0.9
       },
       {
         "id": 46,
         "url": "./img/beverages/2.jpeg",
-        "name": "Кока-кола",
+        "name": "Кока-кола 0.2 л",
         "category": "Напитки",
         "popular": 7,
         "num": 1,
-        "price": 150,
-        "text": "",
+        "price": 55,
+        "text": "Вода, лимонной кислота, сахар и немного любви ❤️️",
         "weight": 2
       }
     ]
