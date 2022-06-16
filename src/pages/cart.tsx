@@ -1,16 +1,20 @@
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
-import CartItem  from '../components/cartItem'
-import { useDispatch } from 'react-redux'
+import { CartItem }  from '../components/cartItem'
 import { clearCart } from '../redux/cart'
+import { FC } from 'react'
+import { useAppDispatch, useAppSelector } from '../assets/hook'
 
-export const Cart = () => {
-    const dispath = useDispatch()
-    const {cartItems, totalCount, totalPrice} = useSelector(({cart}) => cart)
+export const Cart: FC = () => {
+    const dispath = useAppDispatch()
+    const {cartItems, totalCount, totalPrice} = useAppSelector(({cart}) => cart)
+    //@ts-ignore
     const addItemToCart =  Object.keys(cartItems).map(key => cartItems[key].cartItems[0])
     //const weightSum =  addItemToCart[0] && addItemToCart.reduce((prevItem, item) => prevItem.weight * cartItems[prevItem.id].cartItems.length + item.weight * cartItems[item.id].cartItems.length)
+    //@ts-ignore
     const deleteCart = () => window.confirm("Вы точно хотите очистьить корзину?") && dispath(clearCart())
+    //@ts-ignore
     const setOrder = () => alert('Ваш заказ: ' + addItemToCart.map((obj) => '\n' + obj.name + "(" + cartItems[obj.id].cartItems.length + ' шт.' + ")"))
+    
     return (
         <div>
             {!totalCount
@@ -40,11 +44,11 @@ export const Cart = () => {
                             <span className="cart__header-text" >Oчистить корзину</span> 
                         </div>
                     </div>
-                    {
-                        addItemToCart.map((obj, index) => <CartItem itemPrice={cartItems[obj.id].totalPrice} {...obj} 
-                                                                    totalCount={cartItems[obj.id].cartItems.length} key={index}/>  )
-                    }
-                    
+                    <div className="cart-items">
+                        {   //@ts-ignore
+                            addItemToCart.map((obj, index) => <CartItem itemPrice={cartItems[obj.id].totalPrice} {...obj} totalCount={cartItems[obj.id].cartItems.length} key={index}/>  )
+                        }
+                    </div>
                     <div className="cart-bottom">
                         {/* <div className="cart_bottom__first-block">
                             <div className="cart_bottom__weight">{weightSum}</div>

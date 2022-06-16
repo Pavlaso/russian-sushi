@@ -1,14 +1,14 @@
 import React from "react"
-import { useDispatch } from "react-redux"
+import { useAppDispatch } from "../assets/hook"
 import { minusItem, plusItem, removeCartItem } from "../redux/cart"
 
-const CartItem = React.memo( ({url, name, weight, num, totalCount, itemPrice, id}) => {
+export const CartItem: React.FC<CartItemType> = React.memo( ({url, name, weight, num, totalCount, itemPrice, id}) => {
     
-        const dispath = useDispatch()
+        const dispath = useAppDispatch()
 
-        const plusItemFunc = (id) => dispath(plusItem(id))
-        const minusItemFunc = (id) => dispath(minusItem(id))
-        const removeCartItemFunc = (id) => dispath(removeCartItem(id))
+        const plusItemFunc = (id: number) => dispath(plusItem(id))
+        const minusItemFunc = (id: number) => dispath(minusItem(id))
+        const removeCartItemFunc = (id: number) => dispath(removeCartItem(id))
         
         return (
             <div className="cart-item">
@@ -34,14 +34,12 @@ const CartItem = React.memo( ({url, name, weight, num, totalCount, itemPrice, id
     }
 ) 
 
-// type CartItemType =  {
-//     id: number
-//     url: string
-//     name: string
-//     num: number
-//     weight: number
-//     totalCount: number
-//     itemPrice: number
-// }
-
-export default CartItem
+type CartItemType =  {
+    id: number
+    url: string
+    name: string
+    num: number
+    weight: number
+    totalCount: number
+    itemPrice: number
+}

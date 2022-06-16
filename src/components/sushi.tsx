@@ -1,5 +1,7 @@
+import { FC } from "react"
+import { ISushi } from "../assets/types"
 
-export const Sushi = ({url, name, price, text, addFunc, OBJ, addCount}) => {
+export const Sushi: FC<SushiType> = ({url, name, price, text, addFunc, OBJ, addCount}) => {
     return <div className="sushi"> 
         <img src={url} alt='sushi' className="sushi__image" />
         <div className="sushi__title">
@@ -17,4 +19,14 @@ export const Sushi = ({url, name, price, text, addFunc, OBJ, addCount}) => {
             <button className="sushi__bottom-btn" onClick={() => addFunc(OBJ)}>Добавить {addCount}</button>
         </div>
     </div>
+}
+
+type SushiType = {
+    url: string
+    name: string
+    price: number
+    text: string
+    addFunc: (obj: ISushi) => void
+    OBJ: ISushi
+    addCount: number
 }

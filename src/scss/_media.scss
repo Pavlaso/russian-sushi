@@ -13,6 +13,20 @@
         }
     }
 }
+@media(max-width: 768px) {
+    .cart-item {
+        display: inline-block;
+        min-width: 380px;
+        &__block-second {
+            padding: 20px 0 30px 60px;
+        }
+    }
+    .cart-items {
+        display: grid;
+
+    }
+}
+
 @media(max-width: 660px) {
     .header {
         &__number {
@@ -20,6 +34,7 @@
         }
     }
 }
+
 @media(max-width: 470px) {
     .header {
         &__logo-img {
@@ -32,7 +47,40 @@
 }
 
 
-@media(max-width: 430px) {
-    
-}
+@media(max-width: 425px) {
+    .cart-item {
+        width: 100%;
+        &__block-second {
+            padding: 20px 0 30px 10px;
+        }
+        &__block-first {
+            margin: 0;
 
+        }
+        &__image {
+            margin-left: 0;
+        }
+    }
+    .cart {
+        &__header {
+            display: block;
+        }
+        &__header-title {
+            display: block;
+            margin-bottom: 20px;
+        }
+    }
+    .header {
+        display: grid;
+        &__cart {
+            margin: 10px 0 0 0px;
+            
+        }
+    }
+    .title {
+        &__filters-btn {
+            padding-right: 0;
+        }
+    }
+   
+}

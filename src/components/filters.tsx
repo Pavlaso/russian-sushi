@@ -1,20 +1,20 @@
-import { useEffect, useRef, useState } from "react"
+import React, { FC, useEffect, useRef, useState } from "react"
 import cn from "classnames"
 
 
-export const Filters = ({filters, filter, setFitFunc}) => {
+export const Filters: FC<FiltersType> = ({filters, filter, setFitFunc}) => {
 
-    const sortRef = useRef()
+    const sortRef = useRef<any>()
     const [visiblePopup, setVisiblePopup] = useState(false)
 
-    const handleOutsideClick = (event) => {
+    const handleOutsideClick = (event: any) => {
         let path = event.path || (event.composedPath && event.composedPath())
         !path.includes(sortRef.current) && setVisiblePopup(false)
     }
 
     const toggleVisiblePopup = () => setVisiblePopup(!visiblePopup)
 
-    const classN = (item) => cn('open-filter-item', {open_actve: filter === item.type})
+    const classN = (item: IFilter) => cn('open-filter-item', {open_actve: filter === item.type})
 
 
     useEffect(() => {document.body.addEventListener('click', handleOutsideClick)}, [] )
@@ -24,8 +24,8 @@ export const Filters = ({filters, filter, setFitFunc}) => {
                 <button className="title__filters-btn" onClick={toggleVisiblePopup}>Фильтры</button>
                 {visiblePopup &&
                     <div className='open-filter'>
-                    {//что-то с classnamss
-                        filters.map((item, index)=> <div className={classN(item)} key={item + index} onClick={() => setFitFunc(item.type)}>
+                    {
+                        filters.map((item, index)=> <div className={classN(item)} key={item.name + index} onClick={() => setFitFunc(item.type)}>
                             {item.name}
                         </div>)
                     }
@@ -34,4 +34,15 @@ export const Filters = ({filters, filter, setFitFunc}) => {
                     
             </div>
     )
+}
+
+type FiltersType = {
+    filters: IFilter[]
+    filter: string
+    setFitFunc: (filter: string) => void 
+} 
+
+export interface IFilter {
+    type: string
+    name: string
 }

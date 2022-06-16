@@ -1,4 +1,4 @@
-export type  ISushi= {
+export interface ISushi {
     id: number
     url: string
     name: string

@@ -1,12 +1,12 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { FC } from 'react'
 import { Link } from 'react-router-dom'
-import arrow from '../images/arrow.png'
-import cart from '../images/cart.png'
+import { useAppSelector } from '../assets/hook'
+import arrow from '../assets/images/arrow.png'
+import cart from '../assets/images/cart.png'
 
-const Header = React.memo(() => {
+export const Header: FC = React.memo(() => {
     
-    const {totalPrice} = useSelector(({cart}) => cart)
+    const {totalPrice} = useAppSelector(({cart}) => cart)
 
     return  <div className="header">
     <div className="header__container">
@@ -46,4 +46,3 @@ const Header = React.memo(() => {
     </div>
 </div>
 })
-export default Header
